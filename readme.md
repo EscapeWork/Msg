@@ -29,6 +29,15 @@ use EscapeWork\Msg\Msg;
 Msg::getAll();
 ```
 
+### Laravel 4 
+
+A EscapeWork\Msg funciona muito bem com o Laravel 4. E para facilitar ainda mais, você pode usar o `alias` do Laravel 4. 
+
+Para isso, abra o arquivo `app/config/app.php`, e no array `aliases`, adicione a seguinte linha: 
+
+```php
+        'Msg' => 'EscapeWork\Msg\Msg'
+```
 
 ### Instalação 
 
