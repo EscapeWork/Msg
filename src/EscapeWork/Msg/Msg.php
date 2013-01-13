@@ -1,6 +1,6 @@
 <?php namespace EscapeWork\Msg;
 
-class Message
+class Msg
 {
 
     /**
