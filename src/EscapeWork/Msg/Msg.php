@@ -303,4 +303,38 @@ class Msg
         self::setSessionWarnings();
         self::setSessionInfos();
     }
+
+
+    /**
+     * Limpando todas as mensagens, erros, warnings e infos 
+     *
+     * @return  void 
+     */
+    public static function clearAll()
+    {
+        self::clearMessages();
+        self::clearErrors();
+        self::clearWarnings();
+        self::clearInfos();
+    }
+
+    public static function clearMessages()
+    {
+        static::$messages = array();
+    }
+
+    public static function clearErrors()
+    {
+        static::$errors = array();
+    }
+
+    public static function clearWarnings()
+    {
+        static::$warnings = array();
+    }
+
+    public static function clearInfos()
+    {
+        static::$infos = array();
+    }
 }
