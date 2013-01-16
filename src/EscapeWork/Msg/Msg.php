@@ -1,5 +1,7 @@
 <?php namespace EscapeWork\Msg;
 
+use \Session;
+
 class Msg
 {
 
