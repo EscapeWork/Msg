@@ -1,7 +1,7 @@
 {
     "name": "escapework/msg", 
     "description": "Library pra controle de mensagens", 
-    "version": "0.1", 
+    "version": "0.1.1", 
     "type": "library", 
     "homepage": "", 
     "license": "MIT", 
