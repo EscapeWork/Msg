@@ -1,7 +1,436 @@
 {
-    "hash": "864aad55ebe3bd37f183b80a5bc5aa25",
+    "hash": "96248446f934cc6d6affb7547f1140c1",
     "packages": [
-
+        {
+            "name": "illuminate/cache",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/cache",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/cache/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/database": ">=1.0.0",
+                "illuminate/encryption": ">=1.0.0",
+                "illuminate/filesystem": ">=1.0.0",
+                "illuminate/redis": ">=1.0.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2"
+            },
+            "time": "2012-12-01 02:16:36",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Cache": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A beautiful caching library."
+        },
+        {
+            "name": "illuminate/container",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/container",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/container/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-04 02:40:10",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A powerful IoC container for PHP."
+        },
+        {
+            "name": "illuminate/cookie",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/cookie",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/cookie/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/encryption": ">=1.0.0",
+                "illuminate/support": ">=1.0.0",
+                "symfony/http-foundation": "2.1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2"
+            },
+            "time": "2012-11-25 19:46:54",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A cookie creation utility."
+        },
+        {
+            "name": "illuminate/database",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/database",
+                "reference": "v1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/database/archive/v1.1.1.zip",
+                "reference": "v1.1.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/events": ">=1.0.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "require-dev": {
+                "illuminate/console": ">=1.0.0",
+                "illuminate/filesystem": ">=1.0.0",
+                "illuminate/pagination": ">=1.0.0",
+                "illuminate/support": ">=1.0.0",
+                "mockery/mockery": "0.7.2"
+            },
+            "time": "2012-12-05 20:02:04",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Database": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "An elegant database abstraction library.",
+            "keywords": [
+                "laravel"
+            ]
+        },
+        {
+            "name": "illuminate/encryption",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/encryption",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/encryption/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "time": "2012-11-25 19:47:23",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A simple wrapper around the mcrypt library."
+        },
+        {
+            "name": "illuminate/events",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/events",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/events/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/container": ">=1.0.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2"
+            },
+            "time": "2012-11-25 19:47:40",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Events": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A simple, powerful events system."
+        },
+        {
+            "name": "illuminate/filesystem",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/filesystem",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/filesystem/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "time": "2012-11-25 19:48:20",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A filesystem abstraction library."
+        },
+        {
+            "name": "illuminate/redis",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/redis",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/redis/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/support": ">=1.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.7.2"
+            },
+            "time": "2012-12-01 04:47:09",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Redis": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "keywords": [
+                "laravel"
+            ]
+        },
+        {
+            "name": "illuminate/session",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/session",
+                "reference": "v1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/session/archive/v1.1.0.zip",
+                "reference": "v1.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "illuminate/cache": ">=1.0.0",
+                "illuminate/cookie": ">=1.0.0",
+                "illuminate/database": ">=1.0.0",
+                "illuminate/encryption": ">=1.0.0",
+                "illuminate/filesystem": ">=1.0.0",
+                "illuminate/support": ">=1.0.0",
+                "symfony/http-foundation": ">=2.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.7.2"
+            },
+            "time": "2012-12-01 00:07:27",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Session": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A tidy, simple session library."
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/illuminate/support",
+                "reference": "v1.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/illuminate/support/archive/v1.1.2.zip",
+                "reference": "v1.1.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-07 17:38:25",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Illuminate\\Support": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "Various utilities and support functions."
+        },
+        {
+            "name": "symfony/http-foundation",
+            "version": "v2.1.0",
+            "target-dir": "Symfony/Component/HttpFoundation",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/HttpFoundation",
+                "reference": "v2.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/symfony/HttpFoundation/zipball/v2.1.1",
+                "reference": "v2.1.1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2012-09-04 05:24:42",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\HttpFoundation": "",
+                    "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "http://symfony.com"
+        }
     ],
     "packages-dev": [
         {

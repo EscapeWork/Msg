@@ -198,7 +198,7 @@ class Msg
      */
     public static function setSessionErrors()
     {
-        $errors = isset( $_SESSION['errors'] ) ? $_SESSION['errors'] : null;
+        $errors = Session::get('errors');
 
         if( !is_null( $errors ) && is_array( $errors ) )
         {
@@ -209,7 +209,7 @@ class Msg
         }
 
         # erro única 
-        $error = isset( $_SESSION['error'] ) ? $_SESSION['error'] : null;
+        $error = Session::get('error');
         
         if( !is_null( $error ) )
         {
@@ -223,7 +223,7 @@ class Msg
      */
     public static function setSessionMessages()
     {
-        $messages = isset( $_SESSION['messages'] ) ? $_SESSION['messages'] : null;
+        $messages = Session::get('messages');
         
         if( !is_null( $messages ) && is_array( $messages ) )
         {
@@ -234,7 +234,7 @@ class Msg
         }
 
         # mensagem única 
-        $message = isset( $_SESSION['message'] ) ? $_SESSION['message'] : null;
+        $message = Session::get('message');
 
         if( !is_null( $message ) )
         {
@@ -248,7 +248,7 @@ class Msg
      */
     public static function setSessionWarnings()
     {
-        $warnings = isset( $_SESSION['warnings'] ) ? $_SESSION['warnings'] : null;
+        $warnings = Session::get('warnings');
         
         if( !is_null( $warnings ) && is_array( $warnings ) )
         {
@@ -259,7 +259,7 @@ class Msg
         }
 
         # warning única 
-        $warning = isset( $_SESSION['warning'] ) ? $_SESSION['warning'] : null;
+        $warning = Session::get('warning');
 
         if( !is_null( $warning ) )
         {
@@ -273,7 +273,7 @@ class Msg
      */
     public static function setSessionInfos()
     {
-        $infos = isset( $_SESSION['infos'] ) ? $_SESSION['infos'] : null;
+        $infos = Session::get('infos');
         
         if( !is_null( $infos ) && is_array( $infos ) )
         {
@@ -284,7 +284,7 @@ class Msg
         }
 
         # info única 
-        $info = isset( $_SESSION['info'] ) ? $_SESSION['info'] : null;
+        $info = Session::get('info');
 
         if( !is_null( $info ) )
         {

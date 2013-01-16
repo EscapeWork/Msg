@@ -1,7 +1,6 @@
 {
     "name": "escapework/msg", 
     "description": "Library pra controle de mensagens", 
-    "version": "0.1.1", 
     "type": "library", 
     "homepage": "", 
     "license": "MIT", 
@@ -16,7 +15,9 @@
     ], 
 
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0", 
+        "illuminate/session": "1.*", 
+        "illuminate/support": "1.*"
     }, 
 
     "require-dev": {
