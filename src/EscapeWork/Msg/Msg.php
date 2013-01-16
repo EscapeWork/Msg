@@ -88,11 +88,11 @@ class Msg
      * @param   array   $msgs 
      * @param   boolean $html
      */
-    private static function format( array $msgs, $html = true )
+    private static function format( array $msgs, $html = true, $class = '' )
     {
         if( $html === true )
         {
-            $messages = '<div class="alert alert-success">';
+            $messages = '<div class="alert '.$class.'">';
                 $messages .= implode('<br />', $msgs);
             $messages .= '</div>';
         }
@@ -118,7 +118,7 @@ class Msg
             return;
         }
 
-        return static::format( static::$errors, $html );
+        return static::format( static::$errors, $html, 'alert-error' );
     }
 
 
@@ -135,7 +135,7 @@ class Msg
             return;
         }
 
-        return static::format( static::$messages, $html );
+        return static::format( static::$messages, $html, 'alert-success' );
     }
 
 
@@ -169,7 +169,7 @@ class Msg
             return;
         }
 
-        return static::format( static::$infos, $html );
+        return static::format( static::$infos, $html, 'alert-info' );
     }
 
 
