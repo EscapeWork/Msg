@@ -44,7 +44,7 @@ class Msg
      */
     public static function setError( $error )
     {
-        static::$errors[] = $error;
+        static::$errors[] = static::get( $error );
     }
 
 
@@ -55,7 +55,7 @@ class Msg
      */
     public static function setMessage( $message )
     {
-        static::$messages[] = $message;
+        static::$messages[] = static::get( $message );
     }
 
 
@@ -66,7 +66,7 @@ class Msg
      */
     public static function setWarning( $warning )
     {
-        static::$warnings[] = $warning;
+        static::$warnings[] = static::get( $warning );
     }
 
 
@@ -77,7 +77,20 @@ class Msg
      */
     public static function setInfo( $info )
     {
-        static::$infos[] = $info;
+        static::$infos[] = static::get( $info );
+    }
+
+
+    public static function get( $txt )
+    {
+        if( is_array( $txt ) )
+        {
+            return implode('<br />', $txt);
+        }
+        else
+        {
+            return $txt;
+        }
     }
 
 
