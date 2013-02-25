@@ -215,7 +215,7 @@ class Msg
     {
         $errors = Session::get('errors');
 
-        if( !is_null( $errors ) && is_array( $errors ) )
+        if( !is_null( $errors ) && ( is_array( $errors ) || is_object( $errors ) ) )
         {
             foreach( $errors as $error )
             {
@@ -240,7 +240,7 @@ class Msg
     {
         $messages = Session::get('messages');
         
-        if( !is_null( $messages ) && is_array( $messages ) )
+        if( !is_null( $messages ) && ( is_array( $messages ) || is_object( $messages ) ) )
         {
             foreach( $messages as $message )
             {
@@ -265,7 +265,7 @@ class Msg
     {
         $warnings = Session::get('warnings');
         
-        if( !is_null( $warnings ) && is_array( $warnings ) )
+        if( !is_null( $warnings ) && ( is_array( $warnings ) || is_object( $warnings ) ) )
         {
             foreach( $warnings as $warning )
             {
@@ -290,7 +290,7 @@ class Msg
     {
         $infos = Session::get('infos');
         
-        if( !is_null( $infos ) && is_array( $infos ) )
+        if( !is_null( $infos ) && ( is_array( $infos ) || is_object( $infos ) ) )
         {
             foreach( $infos as $info )
             {
