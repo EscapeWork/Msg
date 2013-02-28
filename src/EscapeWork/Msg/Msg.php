@@ -85,6 +85,17 @@ class Msg
     {
         if( is_array( $txt ) )
         {
+            if( is_array( $txt ) )
+            {
+                $html = '';
+                foreach( $txt as $text )
+                {
+                    $html .= implode('<br />', $text);
+                }
+
+                return $html;
+            }
+
             return implode('<br />', $txt);
         }
         else
