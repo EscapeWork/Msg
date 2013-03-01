@@ -90,7 +90,7 @@ class Msg
                 $html = '';
                 foreach( $txt as $text )
                 {
-                    $html .= implode('<br />', $text);
+                    $html .= implode('<br />', is_array( $text ) ? $text : array($text) );
                 }
 
                 return $html;
