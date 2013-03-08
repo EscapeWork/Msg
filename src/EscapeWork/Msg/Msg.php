@@ -83,25 +83,18 @@ class Msg
 
     public static function get( $txt )
     {
-        if( is_array( $txt ) )
-        {
-            if( is_array( $txt ) )
-            {
-                $html = '';
-                foreach( $txt as $text )
-                {
-                    $html .= implode('<br />', is_array( $text ) ? $text : array($text) );
-                }
-
-                return $html;
-            }
-
-            return implode('<br />', $txt);
-        }
-        else
+        if( !is_array( $txt ) )
         {
             return $txt;
         }
+
+        $html = '';
+        foreach( $txt as $text )
+        {
+            $html .= implode('<br />', is_array( $text ) ? $text : array($text) );
+        }
+
+        return $html;
     }
 
 
