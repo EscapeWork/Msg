@@ -1,4 +1,4 @@
-# EscapeWork\Msg
+# EscapeWork\Msg [![Build Status](https://secure.travis-ci.org/EscapeWork/Msg.png)](http://travis-ci.org/EscapeWork/Msg)
 
 Library para fazer controle de mensagens.
 
