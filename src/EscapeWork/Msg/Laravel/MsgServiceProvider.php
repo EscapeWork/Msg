@@ -11,7 +11,7 @@ class MsgServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Register the service provider.
@@ -26,12 +26,5 @@ class MsgServiceProvider extends ServiceProvider
 
             return new Msg;
         });
-
-        $this->registerAlias();
-    }
-
-    protected function registerAlias()
-    {
-        $this->alias('Msg', 'EscapeWork\Msg\Msg');
     }
 }
