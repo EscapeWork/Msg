@@ -1,10 +1,10 @@
 <?php namespace EscapeWork\Msg\Laravel;
 
 use Illuminate\Support\ServiceProvider;
+use EscapeWork\Msg\Msg;
 
 class MsgServiceProvider extends ServiceProvider 
 {
-
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -20,11 +20,6 @@ class MsgServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['escapework.msg'] = $this->app->share(function($app)
-        {
-            Msg::setDriver($app['session']);
-
-            return new Msg;
-        });
+        Msg::setSessionHandler($this->app['session']);
     }
 }
