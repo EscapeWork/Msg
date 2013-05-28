@@ -31,14 +31,14 @@ Msg::getAll();
 
 ### Laravel 4 
 
-A EscapeWork\Msg funciona muito bem com o Laravel 4. E para facilitar ainda mais, você pode usar o `alias` do Laravel 4. 
+A EscapeWork\Msg funciona muito bem com o Laravel 4. E para facilitar ainda mais, você pode usar o `alias` do Laravel 4.
 
-Para isso, abra o arquivo `app/config/app.php`, e no array `aliases`, adicione a seguinte linha: 
+Para isso, abra o arquivo `app/config/app.php`, e no array `providers`, adicione a seguinte linha: 
 
 ```php
-        'Msg' => 'EscapeWork\Msg\Msg'
+        'EscapeWork\Msg\Laravel\MsgServiceProvider'
 ```
 
 ### Instalação 
 
-A instalação está disponível via [Composer](https://packagist.org/packages/escapework/msg). Autoload compátivel com a PSR-0.
+A instalação está disponível via [Composer](https://packagist.org/packages/escapework/msg).

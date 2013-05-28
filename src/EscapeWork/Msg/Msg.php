@@ -1,9 +1,12 @@
 <?php namespace EscapeWork\Msg;
 
-use \Session;
-
 class Msg
 {
+
+    /**
+     * Session Handler
+     */
+    protected static $sessionHandler;
 
     /**
      * Errors 
@@ -12,14 +15,12 @@ class Msg
      */
     public static $errors = array();
 
-
     /**
      * Success messages 
      * 
      * @var array
      */
     public static $messages = array();
-
 
     /**
      * Warnings
@@ -28,7 +29,6 @@ class Msg
      */
     public static $warnings = array();
 
-
     /**
      * Infos
      * 
@@ -36,60 +36,63 @@ class Msg
      */
     public static $infos = array();
 
+    /**
+     * Setting the driver
+     *
+     * @param  mixed Driver
+     */
+    public static function setSessionHandler($sessionHandler)
+    {
+        static::$sessionHandler = $sessionHandler;
+    }
 
     /**
      * Setando um erro 
      * 
      * @param string $error
      */
-    public static function setError( $error )
+    public static function setError($error)
     {
-        static::$errors[] = static::get( $error );
+        static::$errors[] = static::get($error);
     }
-
 
     /**
      * Setando uma mensagem 
      * 
      * @param string $error
      */
-    public static function setMessage( $message )
+    public static function setMessage($message)
     {
-        static::$messages[] = static::get( $message );
+        static::$messages[] = static::get($message);
     }
-
 
     /**
      * Setando um warning 
      * 
      * @param string $error
      */
-    public static function setWarning( $warning )
+    public static function setWarning($warning)
     {
-        static::$warnings[] = static::get( $warning );
+        static::$warnings[] = static::get($warning);
     }
-
 
     /**
      * Setando uma informação  
      * 
      * @param string $error
      */
-    public static function setInfo( $info )
+    public static function setInfo($info)
     {
-        static::$infos[] = static::get( $info );
+        static::$infos[] = static::get($info);
     }
 
-
-    public static function get( $txt )
+    public static function get($txt)
     {
-        if( is_array( $txt ) )
-        {
-            if( is_array( $txt ) )
-            {
+        if (is_array($txt)) {
+            if (is_array($txt)) {
                 $html = '';
-                foreach( $txt as $text )
-                {
+
+                foreach ($txt as $text) {
                     $html .= implode('<br />', is_array( $text ) ? $text : array($text) );
                 }
 
@@ -97,13 +100,10 @@ class Msg
             }
 
             return implode('<br />', $txt);
-        }
-        else
-        {
+        } else {
             return $txt;
         }
     }
-
 
     /**
      * Formatando com suas devidas opções 
@@ -112,22 +112,18 @@ class Msg
      * @param   array   $msgs 
      * @param   boolean $html
      */
-    private static function format( array $msgs, $html = true, $class = '' )
+    private static function format(array $msgs, $html = true, $class = '')
     {
-        if( $html === true )
-        {
+        if ($html === true) {
             $messages = '<div class="alert '.$class.'">';
                 $messages .= implode('<br />', $msgs);
             $messages .= '</div>';
-        }
-        else
-        {
+        } else {
             $messages = implode('<br />', $msgs);
         }
 
         return $messages;
     }
-
 
     /**
      * Retornando todos os erros, formatados 
@@ -135,16 +131,14 @@ class Msg
      * @param  boolean $html se deseja com as tags HTML
      * @return string com o HTML formatado
      */
-    public static function getErrors( $html = true )
+    public static function getErrors($html = true)
     {
-        if( count( static::$errors ) == 0 )
-        {
+        if (count(static::$errors) == 0) {
             return;
         }
 
-        return static::format( static::$errors, $html, 'alert-error' );
+        return static::format(static::$errors, $html, 'alert-error');
     }
-
 
     /**
      * Retornando todos as mensagens, formatados 
@@ -152,16 +146,14 @@ class Msg
      * @param  boolean $html se deseja com as tags HTML
      * @return string        com as mensagens 
      */
-    public static function getMessages( $html = true )
+    public static function getMessages($html = true)
     {
-        if( count( static::$messages ) == 0 )
-        {
+        if (count(static::$messages) == 0) {
             return;
         }
 
-        return static::format( static::$messages, $html, 'alert-success' );
+        return static::format(static::$messages, $html, 'alert-success');
     }
-
 
     /**
      * Retornando todos os warnings, formatados 
@@ -169,16 +161,14 @@ class Msg
      * @param  boolean $html se deseja com as tags HTML
      * @return string com o HTML formatado
      */
-    public static function getWarnings( $html = true )
+    public static function getWarnings($html = true)
     {
-        if( count( static::$warnings ) == 0 )
-        {
+        if (count(static::$warnings) == 0) {
             return;
         }
 
-        return static::format( static::$warnings, $html );
+        return static::format(static::$warnings, $html);
     }
-
 
     /**
      * Retornando todos os infos, formatados 
@@ -186,16 +176,14 @@ class Msg
      * @param  boolean $html se deseja com as tags HTML
      * @return string com o HTML formatado
      */
-    public static function getInfos( $html = true )
+    public static function getInfos($html = true)
     {
-        if( count( static::$infos ) == 0 )
-        {
+        if (count(static::$infos) == 0) {
             return;
         }
 
-        return static::format( static::$infos, $html, 'alert-info' );
+        return static::format(static::$infos, $html, 'alert-info');
     }
-
 
     /**
      * Retornando todas mensagens, erros, warnings e infos
@@ -203,121 +191,91 @@ class Msg
      * @param  boolean $withSessionMessages [Se deseja pegar as mensagens da sessão]
      * @return string  
      */
-    public static function getAll( $html = true, $withSessionMessages = true )
+    public static function getAll($html = true, $withSessionMessages = true)
     {
-        if( $withSessionMessages === true )
-        {
+        if ($withSessionMessages === true) {
             self::setSessionAll();
         }
 
-        $all  = static::getMessages( $html );
-        $all .= static::getInfos( $html );
-        $all .= static::getWarnings( $html );
-        $all .= static::getErrors( $html );
+        $all  = static::getMessages($html);
+        $all .= static::getInfos($html);
+        $all .= static::getWarnings($html);
+        $all .= static::getErrors($html);
 
         return $all;
     }
-
 
     /**
      * Pegando os erros que estão na sessão 
      */
     public static function setSessionErrors()
     {
-        $errors = Session::get('errors');
+        $errors = static::$sessionHandler->get('errors');
 
-        if( !is_null( $errors ) && ( is_array( $errors ) || is_object( $errors ) ) )
-        {
-            foreach( $errors as $error )
-            {
-                self::setError( $error );
+        if (! is_null($errors) && (is_array($errors) || is_object($errors))) {
+            foreach ($errors as $error) {
+                self::setError($error);
             }
         }
-
-        # erro única 
-        $error = Session::get('error');
         
-        if( !is_null( $error ) )
-        {
-            self::setError( $error );
+        if (! is_null($error = static::$sessionHandler->get('error'))) {
+            self::setError($error);
         }
     }
-
 
     /**
      * Pegando as mensagens que estão na sessão 
      */
     public static function setSessionMessages()
     {
-        $messages = Session::get('messages');
+        $messages = static::$sessionHandler->get('messages');
         
-        if( !is_null( $messages ) && ( is_array( $messages ) || is_object( $messages ) ) )
-        {
-            foreach( $messages as $message )
-            {
-                self::setMessage( $message );
+        if (! is_null($messages) && (is_array($messages) || is_object($messages))) {
+            foreach ($messages as $message) {
+                self::setMessage($message);
             }
         }
 
-        # mensagem única 
-        $message = Session::get('message');
-
-        if( !is_null( $message ) )
-        {
-            self::setMessage( $message );
+        if (! is_null($message = static::$sessionHandler->get('message'))) {
+            self::setMessage($message);
         }
     }
-
 
     /**
      * Pegando as warnings que estão na sessão 
      */
     public static function setSessionWarnings()
     {
-        $warnings = Session::get('warnings');
+        $warnings = static::$sessionHandler->get('warnings');
         
-        if( !is_null( $warnings ) && ( is_array( $warnings ) || is_object( $warnings ) ) )
-        {
-            foreach( $warnings as $warning )
-            {
-                self::setWarning( $warning );
+        if (! is_null($warnings) && (is_array($warnings) || is_object($warnings))) {
+            foreach ($warnings as $warning) {
+                self::setWarning($warning);
             }
         }
 
-        # warning única 
-        $warning = Session::get('warning');
-
-        if( !is_null( $warning ) )
-        {
-            self::setWarning( $warning );
+        if (! is_null($warning = static::$sessionHandler->get('warning'))) {
+            self::setWarning($warning);
         }
     }
-
 
     /**
      * Pegando as infos que estão na sessão 
      */
     public static function setSessionInfos()
     {
-        $infos = Session::get('infos');
+        $infos = static::$sessionHandler->get('infos');
         
-        if( !is_null( $infos ) && ( is_array( $infos ) || is_object( $infos ) ) )
-        {
-            foreach( $infos as $info )
-            {
-                self::setInfo( $info );
+        if (! is_null($infos) && (is_array($infos) || is_object($infos))) {
+            foreach ($infos as $info) {
+                self::setInfo($info);
             }
         }
 
-        # info única 
-        $info = Session::get('info');
-
-        if( !is_null( $info ) )
-        {
-            self::setInfo( $info );
+        if (! is_null($info = static::$sessionHandler->get('info'))) {
+            self::setInfo($info);
         }
     }
-
 
     /**
      * Setando todos os tipos de mensagens na sessão 
@@ -329,7 +287,6 @@ class Msg
         self::setSessionWarnings();
         self::setSessionInfos();
     }
-
 
     /**
      * Limpando todas as mensagens, erros, warnings e infos 
